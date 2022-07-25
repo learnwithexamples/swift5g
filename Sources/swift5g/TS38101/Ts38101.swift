@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TS38101 {
+public struct Ts38101 {
     public private(set) var text = "Hello, World!"
 
     public init() {

@@ -1,6 +1,6 @@
 public struct swift5g {
     public private(set) var text = "Hello, World!"
-    public var ts38101 = TS38101()
+    public var ts38101 = Ts38101()
 
     let x : Int = Int(3.4)
     let c = (name: "xiaohong", 12, 90)

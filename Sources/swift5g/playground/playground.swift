@@ -1,7 +1,13 @@
 import Darwin
+extension Int {
+    func sayHi() {
+        print("Int says hi \(self)")
+    }
+}
 public struct playground {
     public init() {
         func greet(_ person: String, day: String) -> (String, Int) {
+            7.sayHi()
             return ("Hello \(person), today is \(day).", 3)
         }
         let res = greet("Xiaohong", day: "Nihao")

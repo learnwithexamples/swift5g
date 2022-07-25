@@ -11,5 +11,8 @@ final class swift5gTests: XCTestCase {
       let ts38101_1 = Ts38101_1()
       print(ts38101_1.info.rel)
       print(ts38101_1.info.fullName)
+      for (key, val) in ts38101_1.definitions {
+        print("\(key): \(val)")
+      }
     }
 }

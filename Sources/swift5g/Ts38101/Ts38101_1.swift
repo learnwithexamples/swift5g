@@ -94,6 +94,9 @@ class Ts38101_1 {
     "ULFPTx": "Uplink Full Power Transmission",
     "V2X": "Vehicle to Everything"
   ]
+  public class Table5p1_1 {
+    let name = "this is a table"
+  }
   public init() {
   }
 }

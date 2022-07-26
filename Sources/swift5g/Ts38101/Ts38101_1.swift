@@ -1,6 +1,6 @@
 // 3GPP TS 38.101-1 V16.12.1 (2022-06)
 import Foundation
-class Ts38101_1 {
+public class Ts38101_1 {
   public let info = SpecInfo(type: "TS", name: "38.101-1", rel: 16, rev: "12.1", date: "2022-06", desp: "User Equipment (UE) radio transmission and reception;\nPart 1: Range 1 Standalone")
   public let definitions = [
     "Aggregated Channel Bandwidth": "The RF bandwidth in which a UE transmits and receives multiple contiguously aggregated carriers.",

@@ -1,5 +1,5 @@
 import Foundation
-struct SpecInfo {
+public struct SpecInfo {
   public let type : String
   public let name : String
   public let rel : Int

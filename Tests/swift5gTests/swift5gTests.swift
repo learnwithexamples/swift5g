@@ -9,6 +9,7 @@ final class swift5gTests: XCTestCase {
 //        XCTAssertEqual(swift5g().text, "Hello, World!")
 //        playground()
       let ts38101_1 = Ts38101_1()
+      let mytab = Ts38101_1.Table5p1_1()
       print(ts38101_1.info.rel)
       print(ts38101_1.info.fullName)
       for (key, val) in ts38101_1.definitions {

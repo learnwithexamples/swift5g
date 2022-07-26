@@ -96,12 +96,10 @@ public class Ts38101_1 {
   ]
   public class Table5p1_1 {
     public let name = "this is a table"
+    public init() {
+    }
   }
-  public let table5p1_1 = Table5p1_1()
-  public let tab2 = {
-    let name = "this is a table"
-    let age = 24
-  }
+//  public let table5p1_1 = Table5p1_1()
   public init() {
   }
 }

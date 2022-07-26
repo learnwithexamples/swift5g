@@ -95,7 +95,7 @@ public class Ts38101_1 {
     "V2X": "Vehicle to Everything"
   ]
   public class Table5p1_1 {
-    let name = "this is a table"
+    public let name = "this is a table"
   }
   public let table5p1_1 = Table5p1_1()
   public init() {

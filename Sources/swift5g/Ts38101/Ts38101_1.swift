@@ -315,4 +315,29 @@ public class Ts38101_1 {
       }
     }
   }
+  public class Table5p3p2_1 {
+    public static let title = TableTitle(id: "5.3.2-1", name: "Maximum transmission bandwidth configuration NRB")
+    public static let bw = [5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100]
+    public static let bwToNrb: [Int: [Int?]] = [
+      15: [25, 52, 79, 106, 133, 160, 216, 270, nil, nil, nil, nil, nil],
+      30: [11, 24, 38, 51, 65, 78, 106, 133, 162, 189, 217, 245, 273],
+      60: [nil, 11, 18, 24, 31, 38, 51, 65, 79, 93, 107, 121, 135],
+    ]
+    public static func getNrb(scs: Int, bw: Int) -> Int? {
+      return 3
+//      if (let tab = bwToNrb[scs]!) {
+//        return 3
+////        if (let idx = self.bw.index(of: bw)) {
+////          return tab[idx]
+////        }
+//      }
+//      return nil
+//    }
+//    public static func getBw(scs: Int, nRb: Int) {
+//    }
+//    public static func nrCaBand(_ band: Int) -> String? {
+//      nrIntraContiguousCaBandList.contains(band) ? "CA_n" + String(band) : nil
+//    }
+    }
+  }
 }

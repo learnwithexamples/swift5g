@@ -193,6 +193,126 @@ public class Ts38101_1 {
       14: "This band is applicable only in countries/regions designating this band for sharedspectrum access use subject to country-specific conditions."
     ]
   }
-  public init() {
+  public class Table5p2Ap1_1 {
+    public static let title = TableTitle(id: "5.2A.1-1", name: "Intra-band contiguous CA operating bands in FR1")
+    public static let nrIntraContiguousCaBandList: [Int] = [1, 7, 40, 41, 46, 48, 66, 71, 77, 78, 79]
+    public static func nrCaBand(_ band: Int) -> String? {
+      nrIntraContiguousCaBandList.contains(band) ? "CA_n" + String(band) : nil
+    }
+  }
+  public class Table5p2Ap1_2 {
+    public static let title = TableTitle(id: "5.2A.1-2", name: "Intra-band non-contiguous CA operating bands in FR1")
+    public static let nrIntraNonContiguousCaBandList: [Int] = [3, 7, 25, 41, 48, 66, 77, 78]
+    public static func nrCaBand(_ band: Int) -> String? {
+      nrIntraNonContiguousCaBandList.contains(band) ? "CA_n" + String(band) + "(*)" : nil
+    }
+  }
+  public class Table5p2Ap2p1_1 {
+    public static let title = TableTitle(id: "5.2A.2.1-1", name: "Inter-band CA operating bands involving FR1 (two bands)")
+    public static let nrInterCaBandList: [(Int, Int, [Int]?, Bool)] = [ // (band, band, [notes], dlInterruptionAllowed)
+      (1, 3, nil, true),
+      (1, 7, nil, true),
+      (1, 8, nil, true),
+      (1, 28, nil, true),
+      (1, 40, nil, true),
+      (1, 41, [1], true),
+      (1, 77, [1], false),
+      (1, 78, [1], false),
+      (1, 79, [1], false),
+      (2, 5, nil, true),
+      (2, 48, nil, true),
+      (2, 66, nil, true),
+      (2, 77, nil, true),
+      (2, 78, nil, true),
+      (3, 7, nil, true),
+      (3, 8, nil, true),
+      (3, 28, nil, true),
+      (3, 38, nil, true),
+      (3, 40, [1], true),
+      (3, 41, [1], false),
+      (3, 77, [1], false),
+      (3, 78, [1], false),
+      (3, 79, [1], false),
+      (5, 7, nil, true),
+      (5, 66, nil, true),
+      (5, 77, [1], true),
+      (5, 78, [1], false),
+      (5, 79, [1], false),
+      (7, 25, nil, true),
+      (7, 28, nil, true),
+      (7, 66, nil, true),
+      (7, 78, [1], true),
+      (8, 39, [1], true),
+      (8, 40, [1], true),
+      (8, 41, [1], false),
+      (8, 75, [1], true),
+      (8, 78, [1], false),
+      (8, 79, [1], false),
+      (20, 28, [2], true),
+      (20, 75, nil, true),
+      (20, 78, nil, true),
+      (25, 41, nil, true),
+      (25, 46, [6], true),
+      (25, 66, nil, true),
+      (25, 71, nil, true),
+      (25, 78, nil, true),
+      (28, 40, nil, true),
+      (28, 41, [1], true),
+      (28, 50, nil, true),
+      (28, 75, [2], true),
+      (28, 77, [1], false),
+      (28, 78, [1], false),
+      (29, 66, nil, true),
+      (29, 70, nil, true),
+      (38, 66, nil, true),
+      (38, 78, [1], true),
+      (39, 40, nil, true),
+      (39, 41, nil, false),
+      (39, 79, [1], false),
+      (40, 41, nil, true),
+      (40, 78, [1], true),
+      (40, 79, [1, 4], false),
+      (41, 50, [1], true),
+      (41, 66, nil, true),
+      (41, 71, [1], true),
+      (41, 78, [1], true),
+      (41, 79, [1, 3], false),
+      (46, 48, [6], true),
+      (46, 66, [6], true),
+      (48, 66, nil, true),
+      (50, 78, nil, true),
+      (66, 70, nil, true),
+      (66, 71, nil, true),
+      (66, 77, nil, true),
+      (66, 78, nil, true),
+      (70, 71, nil, true),
+      (75, 78, [1], true),
+      (76, 78, [1], true),
+      (77, 79, [7], true),
+      (78, 79, [5], true),
+      (78, 92, nil, true),
+      ]
+    public static let notes = [
+      1: "Applicable for UE supporting inter-band carrier aggregation with mandatory simultaneous Rx/Tx capability.",
+      2: "The frequency range in band n28 is restricted for this band combination to 703-733 MHz for the UL and 758-788 MHz for the DL.",
+      3: "The frequency range below 2506 MHz for Band n41 is not used in this combination.",
+      4: "Applicable for frequency range above 4800 MHz for Band n79 in this combination.",
+      5: "For UEs supporting band n77, the minimum requirements apply only when there is non-simultaneous Rx/Tx operation between n78-n79 NR carriers. This restriction applies also for these carriers when applicable NR CA configuration is part of a higher order configuration.",
+      6: "The PCell is allocated in the licensed band in this combination.",
+      7: "The minimum requirements apply only when there is non-simultaneous Rx/Tx operation between n77-n79 NR carriers. This restriction applies also for these carriers when applicable NR CA configuration is part of a higher order configuration.",
+      8: "Applicable when dynamic switching between two uplink carriers is conducted. The DL interruption requirement is specified in clause 8.2.2.2.10 of 38.133.",
+      ]
+    public static func nrCaBand(_ bandA: Int, _ bandB: Int) -> String? {
+      var band1 = bandA, band2 = bandB
+      if (bandA > bandB) {
+        band1 = bandB
+        band2 = bandA
+      }
+      if ((nrInterCaBandList.filter {$0.0 == band1 && $0.1 == band2}).count > 0) {
+        return "CA_n\(band1)-n\(band2)"
+      } else {
+        return nil
+      }
+    }
   }
 }

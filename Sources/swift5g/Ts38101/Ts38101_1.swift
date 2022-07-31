@@ -162,11 +162,11 @@ public class Ts38101_1 {
       95: (2010...2025, nil, Types.DuplexMode.SUL, [8]),
       96: (5925...7125, 5925...7125, Types.DuplexMode.TDD, [13, 14]),
     ]
-    public static func lookup(band: Int) -> (ClosedRange<Double>?, ClosedRange<Double>?, Types.DuplexMode, [Int]?)? {
+    public static func lookup(band: Int) -> (ulFreq: ClosedRange<Double>?, dlFreq: ClosedRange<Double>?, duplex: Types.DuplexMode, note: [Int]?)? {
       nrOperatingBand[band]
     }
-    public static func lookup(freq: Double) -> [Int: (ClosedRange<Double>, Types.DuplexMode, Types.LinkType)] {
-      var res = [Int: (ClosedRange<Double>, Types.DuplexMode, Types.LinkType)]()
+    public static func lookup(freq: Double) -> [Int: (freq: ClosedRange<Double>, duplex: Types.DuplexMode, linkType: Types.LinkType)] {
+      var res = [Int: (freq: ClosedRange<Double>, duplex: Types.DuplexMode, linkType: Types.LinkType)]()
       for (band, val) in nrOperatingBand {
         if (val.ulFreq != nil && val.ulFreq!.contains(freq)) {
           res[band] = (val.ulFreq!, val.duplex, val.duplex == Types.DuplexMode.TDD ? Types.LinkType.Both : Types.LinkType.UL)
@@ -209,7 +209,7 @@ public class Ts38101_1 {
   }
   public class Table5p2Ap2p1_1 {
     public static let title = TableTitle(id: "5.2A.2.1-1", name: "Inter-band CA operating bands involving FR1 (two bands)")
-    public static let nrInterCaBandList: [(Int, Int, [Int]?, Bool)] = [ // (band, band, [notes], dlInterruptionAllowed)
+    public static let nrInterCaBandList: [(bandA: Int, bandB: Int, notes: [Int]?, dlInterruptionAllowed: Bool)] = [
       (1, 3, nil, true),
       (1, 7, nil, true),
       (1, 8, nil, true),

@@ -110,7 +110,7 @@ public class Ts38101_1 {
   }
   public class Table5p2_1 {
     public static let title = TableTitle(id: "5.2-1", name: "NR operating bands in FR1")
-    public static let nROperatingBand: [Int: (ClosedRange<Double>?, ClosedRange<Double>?, Types.DuplexMode, [Int]?)] = [
+    public static let nrOperatingBand: [Int: (ulFreq: ClosedRange<Double>?, dlFreq: ClosedRange<Double>?, duplex: Types.DuplexMode, note: [Int]?)] = [
       1:  (1920...1980, 2110...2170, Types.DuplexMode.FDD, nil),
       2:  (1850...1910, 1930...1990, Types.DuplexMode.FDD, nil),
       3:  (1710...1785, 1805...1880, Types.DuplexMode.FDD, nil),
@@ -162,6 +162,20 @@ public class Ts38101_1 {
       95: (2010...2025, nil, Types.DuplexMode.SUL, [8]),
       96: (5925...7125, 5925...7125, Types.DuplexMode.TDD, [13, 14]),
     ]
+    public static func lookup(band: Int) -> (ClosedRange<Double>?, ClosedRange<Double>?, Types.DuplexMode, [Int]?)? {
+      nrOperatingBand[band]
+    }
+    public static func lookup(freq: Double) -> [Int: (ClosedRange<Double>, Types.DuplexMode, Types.LinkType)] {
+      var res = [Int: (ClosedRange<Double>, Types.DuplexMode, Types.LinkType)]()
+      for (band, val) in nrOperatingBand {
+        if (val.ulFreq != nil && val.ulFreq!.contains(freq)) {
+          res[band] = (val.ulFreq!, val.duplex, val.duplex == Types.DuplexMode.TDD ? Types.LinkType.Both : Types.LinkType.UL)
+        } else if (val.dlFreq != nil && val.dlFreq!.contains(freq)) {
+          res[band] = (val.dlFreq!, val.duplex, Types.LinkType.DL)
+        }
+      }
+      return res
+    }
     public static let notes = [
       1: "UE that complies with the NR Band n50 minimum requirements in this specification shall also comply with the NR Band n51 minimum requirements.",
       2: "UE that complies with the NR Band n75 minimum requirements in this specification shall also comply with the NR Band n76 minimum requirements.",

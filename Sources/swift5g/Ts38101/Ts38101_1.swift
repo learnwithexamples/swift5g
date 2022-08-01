@@ -324,20 +324,30 @@ public class Ts38101_1 {
       60: [nil, 11, 18, 24, 31, 38, 51, 65, 79, 93, 107, 121, 135],
     ]
     public static func getNrb(scs: Int, bw: Int) -> Int? {
-      return 3
-//      if (let tab = bwToNrb[scs]!) {
-//        return 3
-////        if (let idx = self.bw.index(of: bw)) {
-////          return tab[idx]
-////        }
-//      }
-//      return nil
-//    }
-//    public static func getBw(scs: Int, nRb: Int) {
-//    }
-//    public static func nrCaBand(_ band: Int) -> String? {
-//      nrIntraContiguousCaBandList.contains(band) ? "CA_n" + String(band) : nil
-//    }
+      if let tab = bwToNrb[scs] {
+        if let idx = self.bw.index(of: bw) {
+          return tab[idx]
+        }
+      }
+      return nil
+    }
+    public static func getBw(scs: Int, nRb: Int) -> Int? {
+      if let tab = bwToNrb[scs] {
+        if let idx = tab.index(of: nRb) {
+          return bw[idx]
+        }
+      }
+      return nil
+    }
+    public static func getScs(bw: Int, nRb: Int) -> Int? {
+      if let idx = self.bw.index(of: bw) {
+        for (scs, row) in bwToNrb {
+          if (row[idx] == nRb) {
+            return scs
+          }
+        }
+      }
+      return nil
     }
   }
 }

@@ -19,6 +19,10 @@ final class Ts38101_1Tests: XCTestCase {
     XCTAssertEqual(Ts38101_1.Table5p2Ap1_2.nrCaBand(3), "CA_n3(*)")
     XCTAssertEqual(Ts38101_1.Table5p2Ap2p1_1.nrCaBand(78, 1), "CA_n1-n78")
     XCTAssertEqual(Ts38101_1.Table5p2Ap2p1_1.nrCaBand(2, 1), nil)
+    XCTAssertEqual(Ts38101_1.Table5p3p2_1.getNrb(scs: 30, bw: 20), 51)
+    XCTAssertEqual(Ts38101_1.Table5p3p2_1.getScs(bw: 100, nRb: 273), 30)
+    XCTAssertEqual(Ts38101_1.Table5p3p2_1.getScs(bw: 20, nRb: 24), 60)
+
 //    print(Ts38101_1.Table5p2_1.lookup(freq: 1890).sorted(by: {$0.0 < $1.0}))
   }
 }

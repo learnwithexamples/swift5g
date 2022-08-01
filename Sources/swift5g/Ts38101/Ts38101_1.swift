@@ -325,7 +325,7 @@ public class Ts38101_1 {
     ]
     public static func getNrb(scs: Int, bw: Int) -> Int? {
       if let tab = bwToNrb[scs] {
-        if let idx = self.bw.index(of: bw) {
+        if let idx = self.bw.firstIndex(of: bw) {
           return tab[idx]
         }
       }
@@ -333,18 +333,41 @@ public class Ts38101_1 {
     }
     public static func getBw(scs: Int, nRb: Int) -> Int? {
       if let tab = bwToNrb[scs] {
-        if let idx = tab.index(of: nRb) {
+        if let idx = tab.firstIndex(of: nRb) {
           return bw[idx]
         }
       }
       return nil
     }
     public static func getScs(bw: Int, nRb: Int) -> Int? {
-      if let idx = self.bw.index(of: bw) {
+      if let idx = self.bw.firstIndex(of: bw) {
         for (scs, row) in bwToNrb {
           if (row[idx] == nRb) {
             return scs
           }
+        }
+      }
+      return nil
+    }
+    public static func getGuardband(scs: Int, bw: Int) -> Double? {
+      if let nRb = getNrb(scs: scs, bw: bw) {
+        return (Double(bw) * 1e3 - Double(nRb * scs * 12)) / 2 - Double(scs) / 2
+      }
+      return nil
+    }
+  }
+  public class Table5p3p3_1 {
+    public static let title = TableTitle(id: "5.3.3-1", name: "Minimum guardband for each UE channel bandwidth and SCS (kHz)")
+    public static let bw = [5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100]
+    public static let bwToGuardband: [Int: [Double?]] = [
+      15: [242.5, 312.5, 382.5, 452.5, 522.5, 592.5, 552.5, 692.5, nil, nil, nil, nil, nil],
+      30: [505, 665, 645, 805, 785, 945, 905, 1045, 825, 965, 925, 885, 845],
+      60: [nil, 1010, 990, 1330, 1310, 1290, 1610, 1570, 1530, 1490, 1450, 1410, 1370],
+    ]
+    public static func getGuardband(scs: Int, bw: Int) -> Double? {
+      if let tab = bwToGuardband[scs] {
+        if let idx = self.bw.firstIndex(of: bw) {
+          return tab[idx]
         }
       }
       return nil

@@ -22,6 +22,7 @@ final class Ts38101_1Tests: XCTestCase {
     XCTAssertEqual(Ts38101_1.Table5p3p2_1.getNrb(scs: 30, bw: 20), 51)
     XCTAssertEqual(Ts38101_1.Table5p3p2_1.getScs(bw: 100, nRb: 273), 30)
     XCTAssertEqual(Ts38101_1.Table5p3p2_1.getScs(bw: 20, nRb: 24), 60)
+    XCTAssertEqual(Ts38101_1.Table5p3p2_1.getGuardband(scs: 30, bw: 50), Ts38101_1.Table5p3p3_1.getGuardband(scs: 30, bw: 50))
 
 //    print(Ts38101_1.Table5p2_1.lookup(freq: 1890).sorted(by: {$0.0 < $1.0}))
   }

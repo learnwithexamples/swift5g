@@ -94,6 +94,7 @@ public class Ts38101_1 {
     "ULFPTx": "Uplink Full Power Transmission",
     "V2X": "Vehicle to Everything"
   ]
+  public static let bwList = [5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100]
   public class Table5p1_1 {
     public static let title = TableTitle(id: "5.1-1", name: "Definition of frequency ranges")
     public static let frequencyRangeDesignation: [String: ClosedRange<Double>] = ["FR1": 410...7125, "FR2": 24250...52600]
@@ -317,7 +318,6 @@ public class Ts38101_1 {
   }
   public class Table5p3p2_1 {
     public static let title = TableTitle(id: "5.3.2-1", name: "Maximum transmission bandwidth configuration NRB")
-    public static let bw = [5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100]
     public static let bwToNrb: [Int: [Int?]] = [
       15: [25, 52, 79, 106, 133, 160, 216, 270, nil, nil, nil, nil, nil],
       30: [11, 24, 38, 51, 65, 78, 106, 133, 162, 189, 217, 245, 273],
@@ -325,7 +325,7 @@ public class Ts38101_1 {
     ]
     public static func getNrb(scs: Int, bw: Int) -> Int? {
       if let tab = bwToNrb[scs] {
-        if let idx = self.bw.firstIndex(of: bw) {
+        if let idx = Ts38101_1.bwList.firstIndex(of: bw) {
           return tab[idx]
         }
       }
@@ -334,13 +334,13 @@ public class Ts38101_1 {
     public static func getBw(scs: Int, nRb: Int) -> Int? {
       if let tab = bwToNrb[scs] {
         if let idx = tab.firstIndex(of: nRb) {
-          return bw[idx]
+          return Ts38101_1.bwList[idx]
         }
       }
       return nil
     }
     public static func getScs(bw: Int, nRb: Int) -> Int? {
-      if let idx = self.bw.firstIndex(of: bw) {
+      if let idx = Ts38101_1.bwList.firstIndex(of: bw) {
         for (scs, row) in bwToNrb {
           if (row[idx] == nRb) {
             return scs
@@ -358,7 +358,6 @@ public class Ts38101_1 {
   }
   public class Table5p3p3_1 {
     public static let title = TableTitle(id: "5.3.3-1", name: "Minimum guardband for each UE channel bandwidth and SCS (kHz)")
-    public static let bw = [5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100]
     public static let bwToGuardband: [Int: [Double?]] = [
       15: [242.5, 312.5, 382.5, 452.5, 522.5, 592.5, 552.5, 692.5, nil, nil, nil, nil, nil],
       30: [505, 665, 645, 805, 785, 945, 905, 1045, 825, 965, 925, 885, 845],
@@ -366,11 +365,114 @@ public class Ts38101_1 {
     ]
     public static func getGuardband(scs: Int, bw: Int) -> Double? {
       if let tab = bwToGuardband[scs] {
-        if let idx = self.bw.firstIndex(of: bw) {
+        if let idx = Ts38101_1.bwList.firstIndex(of: bw) {
           return tab[idx]
         }
       }
       return nil
     }
+  }
+  public class Table5p3p5_1 {
+    public static let title = TableTitle(id: "5.3.5-1", name: "Channel bandwidths for each NR band")
+    public static let channelBandwidths: [Int: [Int: [Bool]]] = [ // band: (scs: [true/false])
+      1: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        ],
+      2: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        60: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        ],
+      3: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        ],
+      5: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [ false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        ],
+      7: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        ],
+      8: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        ],
+      12: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        ],
+      14: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
+        ],
+      18: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        ],
+      20: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        ],
+      25: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        ],
+      26: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        ],
+      28: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false,  true, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false,  true, false, false, false, false, false, false, false],
+        ],
+      29: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
+        ],
+      30: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
+        ],
+      34: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        ],
+      38: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        ],
+      39: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        ],
+      40: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
+        ],
+
+
+
+
+
+
+
+
+
+//      (2, [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+//        (15, [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false]),
+//        (30, []),
+//        (60, []),
+//        ]),
+    ]
   }
 }

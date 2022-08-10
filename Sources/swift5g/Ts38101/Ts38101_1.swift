@@ -379,100 +379,223 @@ public class Ts38101_1 {
         15: [ true,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
         30: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
         60: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
-        ],
+      ],
       2: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
         30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
         60: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
-        ],
+      ],
       3: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
-        ],
+      ],
       5: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
-        30: [ false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
-        ],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
       7: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
         30: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
         60: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
-        ],
+      ],
       8: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
         30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
-        ],
-      12: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      12: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true, false, false, false, false, false, false, false, false, false, false],
         30: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
-        ],
-      14: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      14: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
         30: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
-        ],
-      18: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      18: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true, false, false, false, false, false, false, false, false, false, false],
         30: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
-        ],
-      20: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      20: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
         30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
-        ],
-      25: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      25: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
-        ],
-      26: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
-        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
-        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
-        ],
-      28: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      28: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true, false,  true, false, false, false, false, false, false, false],
         30: [false,  true,  true,  true, false,  true, false, false, false, false, false, false, false],
-        ],
-      29: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      29: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
         30: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
-        ],
-      30: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      30: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
         30: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
-        ],
-      34: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      34: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true, false, false, false, false, false, false, false, false, false, false],
         30: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
-        ],
-      38: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        60: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
+      ],
+      38: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
-        ],
-      39: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      39: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
-        ],
-      40: [// 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+      ],
+      40: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true,  true,  true, false,  true, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true,  true,  true, false,  true, false, false],
+      ],
+      41: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false,  true,  true,  true, false,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true, false,  true,  true,  true,  true, false,  true,  true,  true],
+        60: [false,  true,  true,  true, false,  true,  true,  true,  true, false,  true,  true,  true],
+      ],
+      46: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false,  true, false,  true, false, false,  true, false, false, false, false, false, false],
+        30: [false,  true, false,  true, false, false,  true, false,  true, false,  true, false, false],
+        60: [false,  true, false,  true, false, false,  true, false,  true, false,  true, false, false],
+      ],
+      47: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false,  true, false,  true, false,  true,  true, false, false, false, false, false, false],
+        30: [false,  true, false,  true, false,  true,  true, false, false, false, false, false, false],
+        60: [false,  true, false,  true, false,  true,  true, false, false, false, false, false, false],
+      ],
+      48: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false,  true,  true,  true, false,  true,  true,  true],
+        60: [false,  true,  true,  true, false, false,  true,  true,  true, false,  true,  true,  true],
+      ],
+      50: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true, false,  true,  true,  true,  true, false,  true, false, false],
+        60: [false,  true,  true,  true, false,  true,  true,  true,  true, false,  true, false, false],
+      ],
+      51: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true, false, false, false, false, false, false, false, false, false, false, false, false],
+      ],
+      53: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
+        60: [false,  true, false, false, false, false, false, false, false, false, false, false, false],
+      ],
+      65: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false,  true, false, false, false, false, false],
+        60: [false,  true,  true,  true, false, false, false,  true, false, false, false, false, false],
+      ],
+      66: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
         15: [ true,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         30: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
         60: [false,  true,  true,  true,  true,  true,  true, false, false, false, false, false, false],
-        ],
-
-
-
-
-
-
-
-
-
-//      (2, [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
-//        (15, [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false]),
-//        (30, []),
-//        (60, []),
-//        ]),
+      ],
+      70: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true, false, false, false, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true, false, false, false, false, false, false, false, false],
+      ],
+      71: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      74: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        60: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      75: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+      ],
+      76: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true, false, false, false, false, false, false, false, false, false, false, false, false],
+      ],
+      77: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true],
+        60: [false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true],
+      ],
+      78: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false,  true,  true,  true,  true,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true],
+        60: [false,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true,  true],
+      ],
+      79: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false, false, false, false, false, false,  true,  true, false, false, false, false, false],
+        30: [false, false, false, false, false, false,  true,  true,  true, false,  true, false,  true],
+        60: [false, false, false, false, false, false,  true,  true,  true, false,  true, false,  true],
+      ],
+      80: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true,  true,  true, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true,  true,  true, false, false, false, false, false, false, false],
+        60: [false,  true,  true,  true,  true,  true, false, false, false, false, false, false, false],
+      ],
+      81: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      82: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      83: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      84: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        60: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      86: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false,  true, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false,  true, false, false, false, false, false, false],
+        60: [false,  true,  true,  true, false, false,  true, false, false, false, false, false, false],
+      ],
+      89: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      90: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false,  true,  true,  true, false,  true,  true,  true, false, false, false, false, false],
+        30: [false,  true,  true,  true, false,  true,  true,  true,  true, false,  true,  true,  true],
+        60: [false,  true,  true,  true, false,  true,  true,  true,  true, false,  true,  true,  true],
+      ],
+      91: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
+      ],
+      92: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      93: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true, false, false, false, false, false, false, false, false, false, false, false],
+      ],
+      94: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true,  true, false, false, false, false, false, false, false, false, false],
+      ],
+      95: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [ true,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        30: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
+        60: [false,  true,  true, false, false, false, false, false, false, false, false, false, false],
+      ],
+      96: [ // 5MHz   10MHz  15MHz  20MHz  25MHz  30MHz  40MHz  50MHz 60MHz  70MHz  80MHz  90MHz  100MHz
+        15: [false, false, false,  true, false, false,  true, false, false, false, false, false, false],
+        30: [false, false, false,  true, false, false,  true, false,  true, false,  true, false, false],
+        60: [false, false, false,  true, false, false,  true, false,  true, false,  true, false, false],
+      ],
     ]
   }
 }

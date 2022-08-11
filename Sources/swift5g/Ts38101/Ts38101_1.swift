@@ -597,5 +597,63 @@ public class Ts38101_1 {
         60: [false, false, false,  true, false, false,  true, false,  true, false,  true, false, false],
       ],
     ]
+//    [Int: [Int: [Bool]]] = [ // band: (scs: [true/false])
+    public static func getSCSs(band: Int, bw: Int = 0) -> [Int]? {
+      if let info = channelBandwidths[band]?.sorted(by: { $0.0 < $1.0 }) {
+        var SCSs = [Int]()
+        for (scs, BWs) in info {
+          if (bw == 0) {
+            SCSs.append(scs)
+          } else {
+            if let idx = Ts38101_1.bwList.firstIndex(of: bw) {
+              if BWs[idx] {
+                SCSs.append(scs)
+              }
+            }
+          }
+        }
+        return SCSs
+      }
+      return nil
+    }
+    public static func getBWs(band: Int, scs: Int) -> [Int]? {
+      if let info = channelBandwidths[band]?[scs] {
+        var BWs = [Int]()
+        for (idx, bw) in info.enumerated() {
+          if bw {
+            BWs.append(Ts38101_1.bwList[idx])
+          }
+        }
+        return BWs
+      }
+      return nil
+    }
+    public static func getBands(scs: Int = 0, bw: Int = 0) -> [Int]? {
+      var Bands = [Int]()
+      for (band, info) in channelBandwidths.sorted(by: {$0.0 < $1.0}) {
+        for (scs2, BWs) in info.sorted(by: {$0.0 < $1.0}) {
+          var bwOk = false
+          if bw == 0 {
+            bwOk = true
+          } else if let idx = Ts38101_1.bwList.firstIndex(of: bw) {
+            bwOk = BWs[idx]
+          }
+          if bwOk && (scs == 0 || scs == scs2) {
+            Bands.append(band)
+            break
+          }
+        }
+      }
+      return Bands.count > 0 ? Bands : nil
+    }
+    public static func isValid(band: Int, scs: Int, bw: Int) -> Bool {
+      if let idx = Ts38101_1.bwList.firstIndex(of: bw) {
+        if let trueFalse = channelBandwidths[band]?[scs]?[idx] {
+          return trueFalse
+        }
+        return false
+      }
+      return false
+    }
   }
 }

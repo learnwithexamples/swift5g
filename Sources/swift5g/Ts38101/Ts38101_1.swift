@@ -656,4 +656,47 @@ public class Ts38101_1 {
       return false
     }
   }
+  public class Table5p3p6_1 {
+    public static let title = TableTitle(id: "Table 5.3.6-1", name: "FDD asymmetric UL and DL channel bandwidth combinations")
+    public static let ulDlBwCombo : [Int: [Int: [([Int], [Int])]]] = [ // band: [set: [(UL, DL)]]
+      66: [
+        0: [([5, 10], [20, 40]), ([20], [40])],
+        1: [([5, 10], [20, 25, 30, 40]), ([20, 25, 30], [40])],
+      ],
+      70: [
+        0: [([5, 10], [15]), ([5, 10, 15], [20, 25])],
+      ],
+      71: [
+        0: [([5], [10]), ([10], [15]), ([15], [20])],
+      ],
+      91: [
+        0: [([10], [15])],
+      ],
+      92: [
+        0: [([5], [10, 15, 20]), ([10], [15, 20])],
+      ],
+      93: [
+        0: [([10], [5])],
+      ],
+      94: [
+        0: [([5], [10, 15, 20]), ([10], [15, 20])],
+      ],
+    ]
+  }
+  public class Table5p3p6_2 {
+    public static let title = TableTitle(id: "Table 5.3.6-2", name: "TDD asymmetric UL and DL channel bandwidth combinations")
+    public static let ulDlBwCombo : [Int: [([Int], [Int])]] = [
+      50: [([60], [80])],
+    ]
+  }
+  public class Table5p3ap5_1 {
+    public static let title = TableTitle(id: "Table 5.3A.5-1", name: "NR CA bandwidth classes")
+    public static let mtfunc : () -> Int = {
+         print("Hi")
+         return 1
+    }
+    public static let test: Dictionary = Dictionary<String, (Int) -> Int>()
+//    public static let nrCaBandwidthClass : (String) -> (() -> Int) = [
+//      :]
+  }
 }

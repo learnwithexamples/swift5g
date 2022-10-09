@@ -31,6 +31,7 @@ final class Ts38101_1Tests: XCTestCase {
     XCTAssertEqual(Ts38101_1.Table5p3p5_1.isValid(band: 1, scs: 60, bw: 30), true)
     XCTAssertEqual(Ts38101_1.Table5p3p5_1.getBands(scs: 60, bw: 10), [1, 2, 3, 7, 25, 34, 38, 39, 40, 41, 46, 47, 48, 50, 53, 65, 66, 70, 74, 75, 77, 78, 80, 84, 86, 90, 95])
     XCTAssertEqual(Ts38101_1.Table5p3p5_1.getBands(scs: 60, bw: 5), nil)
+//    print(type(of: Ts38101_1.Table5p4p2p3_1.nrarfcn))
 //    print(Ts38101_1.Table5p3p5_1.getScs(band: 100))
 //    print(Ts38101_1.Table5p2_1.lookup(freq: 1890).sorted(by: {$0.0 < $1.0}))
   }
